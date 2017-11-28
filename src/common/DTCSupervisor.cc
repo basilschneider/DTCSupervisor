@@ -1195,6 +1195,7 @@ xoap::MessageReference DTCSupervisor::fireEvent (xoap::MessageReference msg) thr
                 {
                     //toolbox::Event::Reference e (new toolbox::Event (commandName, this) );
                     //fsm_.fireEvent (e);
+                    if (commandName == "Initialise"){ commandName = "Initialize"; }
                     fFSM.fireEvent (commandName, this);
                 }
                 catch (toolbox::fsm::exception::Exception& e)
